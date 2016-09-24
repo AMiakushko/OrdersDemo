@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+<h2>@ViewBag.Title.</h2>
+
+<h3>Login Demo Account</h3>
+<p>
+    e-mail: admin@gmail.com <br /> password: Qwerty78!
+</p>
+
+<h3>@ViewBag.Message</h3>
+
+<p>Select Managers.LastName, COUNT(Orders.Number) AS "# of Orders" <br>
+FROM Orders <br>
+INNER JOIN Managers ON ( Orders.ManagerId = Managers.ManagerId ) <br>
+WHERE Orders.CreateDate BETWEEN DATEADD(month,-3,GETDATE()) AND GETDATE() <br>
+GROUP BY Managers.LastName <br>
+ORDER BY "# of Orders" DESC</p>
+
+<hr />
+
+<p>It is also stored in SQLQuery1.sql in queries project subfolder.</p>
